@@ -55,6 +55,10 @@ app.get("/api/is_user_connected", async (req, res, next) => {
     : res.json({ status: false });
 });
 
+app.get('/', function (req, res) {
+  res.json({message: "Hello from backend!!"})
+})
+
 // Retrieves the name of the bank that we're connected to
 app.get("/api/get_bank_name", async (req, res, next) => {
   const access_token = req.session.access_token;
